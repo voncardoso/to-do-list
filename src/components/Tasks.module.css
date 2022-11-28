@@ -35,3 +35,8 @@
     color: var(--purple);
     font-weight: bold;
 }
+
+.empty{
+    width: 500px;
+    margin: 0 auto;
+}
