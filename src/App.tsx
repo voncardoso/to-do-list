@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Header } from './components/Header'
 import { NewTask } from './components/NewTask'
+import { Tasks } from './components/Tasks'
 
 
 function App() {
@@ -8,7 +9,10 @@ function App() {
   return (
     <section>
       <Header/>
-      <NewTask/>
+      <main>
+        <NewTask/>
+        <Tasks/>
+      </main>
     </section>
   )
 }

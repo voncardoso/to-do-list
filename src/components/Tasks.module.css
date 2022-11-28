@@ -1,0 +1,37 @@
+.tasks{
+    max-width: 736px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+
+.header div{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.header div span{
+    background: var(--gray-400);
+    padding: 2px 8px;
+    border-radius: 50%;
+    color: var(--gray-200);
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
+.TasksCreate p{
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.finished p{
+    color: var(--purple);
+    font-weight: bold;
+}
