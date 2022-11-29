@@ -1,12 +1,17 @@
 import { PlusCircle } from "phosphor-react";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./NewTask.module.css";
 
 export function NewTask() {
-  const [dataTakes, setDataTakes] = useState([]);
   const [takesText, setTakesText] = useState("");
+  const [dataTakes, setDataTakes] = useState<any>([]);
 
-  function handleCreateNewToDo() {}
+  function handleCreateNewToDo(event: FormEvent) {
+    event.preventDefault();
+
+    setDataTakes([...dataTakes, takesText]);
+    setTakesText("");
+  }
 
   function handleNewTaskesChenge(event: ChangeEvent<HTMLInputElement>) {
     setTakesText(event.target.value);
@@ -14,7 +19,7 @@ export function NewTask() {
 
   console.log("data", dataTakes);
   return (
-    <form className={styles.form}>
+    <form onSubmit={handleCreateNewToDo} className={styles.form}>
       <input
         type="text"
         placeholder="Adicione uma nova tarefa"
