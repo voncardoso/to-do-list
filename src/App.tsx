@@ -1,20 +1,18 @@
-import { useState } from 'react'
-import { Header } from './components/Header'
-import { NewTask } from './components/NewTask'
-import { Tasks } from './components/Tasks'
-
+import { useState } from "react";
+import { Header } from "./components/Header";
+import { NewTask } from "./components/NewTask";
+import { Tasks } from "./components/Tasks";
 
 function App() {
-
+  const [dataTakes, setDataTakes] = useState<any>([]);
   return (
     <section>
-      <Header/>
+      <Header />
       <main>
-        <NewTask/>
-        <Tasks/>
+        <NewTask />
       </main>
     </section>
-  )
+  );
 }
 
-export default App
+export default App;
