@@ -1,21 +1,26 @@
 import { Trash } from "phosphor-react";
 import styles from "./Tasks.module.css";
 import Clipboard from "../assets/Clipboard.svg";
-import ImgDelete from "../assets/trash.svg";
-import { useState } from "react";
 
 interface ArryTakes {
   data: [];
   onDeleteTasks: (task: string) => void;
 }
 
+interface ObjectArrayTakes {
+  title: string;
+  id: string;
+  isComplete: boolean;
+}
+
 export function Tasks({ data, onDeleteTasks }: ArryTakes) {
+  console.log(data);
   return (
     <section className={styles.tasks}>
       <header className={styles.header}>
         <div className={styles.TasksCreate}>
           <p>Tarefas Criadas</p>
-          <span>0</span>
+          <span>{data.length}</span>
         </div>
 
         <div className={styles.finished}>
@@ -34,14 +39,14 @@ export function Tasks({ data, onDeleteTasks }: ArryTakes) {
         </div>
       ) : (
         <ul className={styles.info}>
-          {data.map((task) => {
+          {data.map((task: ObjectArrayTakes) => {
             return (
               <li>
                 <input type="checkbox" />
-                <p>{task}</p>
+                <p>{task.title}</p>
                 <button
                   onClick={() => {
-                    onDeleteTasks(task);
+                    onDeleteTasks(task.id);
                   }}
                 >
                   <Trash />

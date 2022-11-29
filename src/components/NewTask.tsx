@@ -2,6 +2,13 @@ import { PlusCircle } from "phosphor-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./NewTask.module.css";
 import { Tasks } from "./Tasks";
+import { v4 as uuidv4 } from "uuid";
+
+interface ObjectArrayTakes {
+  title: string;
+  id: string;
+  isComplete: boolean;
+}
 
 export function NewTask() {
   const [takesText, setTakesText] = useState("");
@@ -11,7 +18,13 @@ export function NewTask() {
   function handleCreateNewToDo(event: FormEvent) {
     event.preventDefault();
 
-    setDataTakes([...dataTakes, takesText]);
+    const task = {
+      id: uuidv4(),
+      title: takesText,
+      isComplete: false,
+    };
+
+    setDataTakes([...dataTakes, task]);
     setTakesText("");
   }
 
@@ -21,10 +34,11 @@ export function NewTask() {
   }
 
   function deleteTasks(task: string) {
-    const taskTextDelete = dataTakes.filter((taskItem: string) => {
-      return taskItem !== task;
+    const taskTextDelete = dataTakes.filter((taskItem: ObjectArrayTakes) => {
+      return taskItem.id !== task;
     });
 
+    console.log("taskTextDelete", taskTextDelete);
     setDataTakes(taskTextDelete);
   }
 
