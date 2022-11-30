@@ -1,4 +1,4 @@
-import { Trash } from "phosphor-react";
+import { Trash, Check } from "phosphor-react";
 import styles from "./Tasks.module.css";
 import Clipboard from "../assets/Clipboard.svg";
 
@@ -48,10 +48,19 @@ export function Tasks({
           {data.map((task: ObjectArrayTakes) => {
             return (
               <li key={task.id}>
-                <button
-                  onClick={() => handleIsCompleteTaks(task.id)}
-                  className={styles.checked}
-                ></button>
+                {task.isComplete ? (
+                  <button
+                    onClick={() => handleIsCompleteTaks(task.id)}
+                    className={styles.checkedActive}
+                  >
+                    <Check size={12} />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleIsCompleteTaks(task.id)}
+                    className={styles.checked}
+                  ></button>
+                )}
                 <p>{task.title}</p>
                 <button
                   className={styles.delete}

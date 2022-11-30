@@ -88,3 +88,18 @@
 .checked:hover {
   background: var(--blue-dark);
 }
+
+.checkedActive {
+  height: 17.45px;
+  width: 17.45px;
+  border-radius: 50%;
+  line-height: 0; /*// centraliza o img no button*/
+  cursor: pointer;
+  border: none;
+  background: var(--purple-dark);
+  color: var(--gray-100);
+}
+
+.checkedActive:hover {
+  background: var(--purple);
+}
