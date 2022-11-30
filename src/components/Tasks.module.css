@@ -62,8 +62,7 @@
   font-size: 0.874rem;
   line-height: 140%;
 }
-
-.info button {
+.delete {
   cursor: pointer;
   line-height: 0; /*// centraliza o img no button*/
   border: none;
@@ -71,7 +70,21 @@
   color: var(--gray-300);
 }
 
-.info button:hover {
+.delete:hover {
   background: var(--gray-400);
   color: var(--danger);
+}
+
+.checked {
+  height: 17.45px;
+  width: 17.45px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  border: 2px solid var(--blue);
+  background: transparent;
+}
+
+.checked:hover {
+  background: var(--blue-dark);
 }

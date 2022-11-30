@@ -42,6 +42,17 @@ export function NewTask() {
     setDataTakes(taskTextDelete);
   }
 
+  function handleIsCompleteTaks(id: string) {
+    const newtaske = dataTakes.map((taskItem: ObjectArrayTakes) => {
+      if (id === taskItem.id) {
+        taskItem.isComplete = true;
+      }
+      return taskItem;
+    });
+
+    setDataTakes(newtaske);
+  }
+
   return (
     <>
       <form onSubmit={handleCreateNewToDo} className={styles.form}>
@@ -56,7 +67,11 @@ export function NewTask() {
           <PlusCircle size={18} weight="bold" />
         </button>
       </form>
-      <Tasks data={dataTakes} onDeleteTasks={deleteTasks} />
+      <Tasks
+        data={dataTakes}
+        onDeleteTasks={deleteTasks}
+        handleIsCompleteTaks={handleIsCompleteTaks}
+      />
     </>
   );
 }
