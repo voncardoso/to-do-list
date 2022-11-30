@@ -18,8 +18,16 @@
 .header div span {
   background: var(--gray-400);
   padding: 2px 8px;
-  border-radius: 50%;
+  border-radius: 999px;
   color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.header div .spanDe {
+  background: var(--gray-400);
+  padding: 2px 10px;
+  border-radius: 999px;
   font-size: 0.75rem;
   font-weight: bold;
 }

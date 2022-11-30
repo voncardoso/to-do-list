@@ -1,5 +1,5 @@
 import { PlusCircle } from "phosphor-react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import styles from "./NewTask.module.css";
 import { Tasks } from "./Tasks";
 import { v4 as uuidv4 } from "uuid";
@@ -13,6 +13,9 @@ interface ObjectArrayTakes {
 export function NewTask() {
   const [takesText, setTakesText] = useState("");
   const [dataTakes, setDataTakes] = useState<any>([]);
+  const finishTakes = dataTakes.filter(
+    (task: ObjectArrayTakes) => task.isComplete
+  ).length;
 
   // criar a o item na to-do list
   function handleCreateNewToDo(event: FormEvent) {
@@ -45,7 +48,9 @@ export function NewTask() {
   function handleIsCompleteTaks(id: string) {
     const newtaske = dataTakes.map((taskItem: ObjectArrayTakes) => {
       if (id === taskItem.id) {
-        taskItem.isComplete = true;
+        taskItem.isComplete
+          ? (taskItem.isComplete = false)
+          : (taskItem.isComplete = true);
       }
       return taskItem;
     });
@@ -71,6 +76,7 @@ export function NewTask() {
         data={dataTakes}
         onDeleteTasks={deleteTasks}
         handleIsCompleteTaks={handleIsCompleteTaks}
+        finishTakes={finishTakes}
       />
     </>
   );

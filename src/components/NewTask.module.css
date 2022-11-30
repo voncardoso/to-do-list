@@ -1,45 +1,45 @@
-.form{
-    max-width: 736px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    position: relative;
-    top: -30px;
-    height: 54px;
+.form {
+  max-width: 736px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+  top: -30px;
+  height: 54px;
 }
 
-.form input{
-    width: 100%;
-    padding: 0.875rem;
-    border-radius: 8px;
-    background: var(--gray-500);
-    border: 1px solid var(--gray-700);
-    font-size: 1rem;
-    color: var(--gray-100);
+.form input {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 8px;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  font-size: 1rem;
+  color: var(--gray-100);
 }
 
-.form input:focus{
-    outline: transparent;
-    box-shadow: 0 0 0 1px var(--purple-dark);
-    border: none;
+.form input:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--purple-dark);
+  border: none;
 }
 
-.form button{
-    font-size: 0.875rem;
-    padding: 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    color: var(--gray-100);
-    background: var(--blue-dark);
-    cursor: pointer;
-    border: none;
+.form button {
+  font-size: 0.875rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: var(--gray-100);
+  background: var(--blue-dark);
+  cursor: pointer;
+  border: none;
 }
 
-.form button:hover{
-    background: var(--blue);
+.form button:hover {
+  background: var(--blue);
 }

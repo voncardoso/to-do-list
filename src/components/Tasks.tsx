@@ -6,6 +6,7 @@ interface ArryTakes {
   data: [];
   onDeleteTasks: (task: string) => void;
   handleIsCompleteTaks: (task: string) => void;
+  finishTakes: number;
 }
 
 interface ObjectArrayTakes {
@@ -18,9 +19,8 @@ export function Tasks({
   data,
   onDeleteTasks,
   handleIsCompleteTaks,
+  finishTakes,
 }: ArryTakes) {
-  console.log(data);
-
   return (
     <section className={styles.tasks}>
       <header className={styles.header}>
@@ -30,8 +30,14 @@ export function Tasks({
         </div>
 
         <div className={styles.finished}>
-          <p>Tarefas Concluidas</p>
-          <span>0</span>
+          <p>Concluidas</p>
+          {data.length === 0 ? (
+            <span>0</span>
+          ) : (
+            <span className={styles.spanDe}>
+              {finishTakes} de {data.length}
+            </span>
+          )}
         </div>
       </header>
 
