@@ -62,12 +62,18 @@ export function Tasks({
                     <Check size={12} />
                   </button>
                 ) : (
-                  <button
-                    onClick={() => handleIsCompleteTaks(task.id)}
-                    className={styles.checked}
-                  ></button>
+                  <>
+                    <button
+                      onClick={() => handleIsCompleteTaks(task.id)}
+                      className={styles.checked}
+                    ></button>
+                  </>
                 )}
-                <p>{task.title}</p>
+                {task.isComplete ? (
+                  <p className={styles.isClompleteTitle}>{task.title}</p>
+                ) : (
+                  <p>{task.title}</p>
+                )}
                 <button
                   className={styles.delete}
                   onClick={() => {
